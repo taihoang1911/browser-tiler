@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "browser-tiler"
+version = "0.1.1"
+description = "Tile browser testing windows (selenium, undetected-chromedriver, Playwright) into a grid on Windows."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pywin32>=306; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+selenium = ["selenium>=4"]
+uc = ["undetected-chromedriver>=3.5", "selenium>=4"]
+playwright = ["playwright>=1.40"]
+
+[tool.setuptools]
+packages = ["browser_tiler"]
